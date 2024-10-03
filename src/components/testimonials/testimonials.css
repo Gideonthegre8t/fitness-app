@@ -1,0 +1,32 @@
+.testimonials-container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.testimonials-wallpaper {
+  z-index: -1;
+  margin-top: -9em;
+  width: 100%;
+}
+
+.testimonial-card-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: -40em;
+  z-index: 1;
+  gap: 1em;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  background: #0a262f;
+gap: 25px;
+  width: 324px;
+  height: 403px;
+  padding: 53px 27px 53px 27px;
+  border-radius: 10px;
+}

@@ -1,0 +1,29 @@
+.sponsors-container {
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  background: #345e31;
+  text-align: center;
+width: 100%;
+
+}
+
+.sponsor4 {
+  margin-top: -1.8em;
+}
+
+.sponsors-logo {
+  display: flex;
+  justify-content: space-between;
+  padding: 0em 10em;
+  margin-top: 2em;
+  width: 100%;
+}
+
+.sponsor3 {
+  margin-top: -5px;
+}
+
+.sponsor5 {
+  margin-top: 5px;
+}

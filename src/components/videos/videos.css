@@ -1,0 +1,29 @@
+.videos-container{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 15em;
+}
+
+
+.vidoes-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin:4em;
+}
+
+.videos-image{
+    width: 100%;
+}
+.videos-wallpaper-text{
+    position: absolute;
+    width: 100%;
+    margin-left: -50%;
+}
+
+.see-more{
+    display: flex;
+    margin-top: -3em;
+    margin-left: 90%;
+    gap: 10px;
+}

@@ -1,0 +1,45 @@
+.services-container{
+    margin-top: 10em;
+    display: flex;
+    flex-direction: column;
+    gap:6em;
+}
+
+.training{
+    display: flex;
+    justify-content: space-between;
+gap: 12em;
+}
+
+.training-img{
+    max-width: 100%;
+}
+
+.training-description{
+    margin-top: 5em;
+}
+
+.training-description > h3{
+    font-size: clamp(1.5em, 3vw + 1em, 2.5em);
+    font-weight: 500;
+    line-height: 48.41px;
+}
+
+.training-description > p{
+    margin-top: 1em;
+width: 90%;
+font-size: 16px;
+font-weight: 400;
+
+}
+
+.arrow-img{
+    margin-top: 1em;
+}
+
+.service-wallpaper-text{
+    position: absolute;
+    margin-left:38%;
+    margin-top: 9em;
+}
+
