@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <section className="footer-container">
+    <section id="contact" className="footer-container">
       <Image
         className="footer-wallpaper"
         src="/images/footer-wallpaper.png"

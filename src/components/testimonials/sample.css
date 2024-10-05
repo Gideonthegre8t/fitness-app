@@ -1,0 +1,52 @@
+.testimonials-container {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .testimonials-wallpaper {
+    z-index: -1;
+    width: 100%;
+    height: auto; /* Ensure it scales properly */
+  }
+  
+  .carousel {
+    overflow: hidden; /* Hide overflow to ensure only one card is shown */
+    width: 100%; /* Make the carousel full width */
+    position: relative; /* For absolute positioning of inner elements */
+  }
+  
+  .testimonial-card-wrapper {
+    display: flex; /* Use flexbox to layout the cards horizontally */
+    cursor: grab; /* Show grabbing cursor when hovering over the carousel */
+    transition: transform 0.2s ease; /* Smooth transition for dragging */
+  }
+  
+  .testimonial-card {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    text-align: left; /* Align text to the left */
+    background: #0a262f;
+    gap: 25px; /* Space between card elements */
+    min-width: 324px; /* Ensure a minimum width for each card */
+    height: 403px; /* Fixed height for consistency */
+    padding: 53px 27px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+    transition: transform 0.2s ease; /* Smooth transition on hover */
+  }
+  
+  .testimonial-card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+  }
+  
+  /* Additional styles for the profile circle and rating can remain as they are */
+  .profile-circle {
+    border-radius: 50%; /* Make the image circular */
+    margin-bottom: 1em; /* Space below image */
+  }
+  
+  .rating {
+    margin-top: 0.5em; /* Space above rating */
+  }
+  

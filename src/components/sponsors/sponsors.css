@@ -3,9 +3,16 @@
   text-align: center;
   position: absolute;
   background: #345e31;
-  text-align: center;
-width: 100%;
+  width: 100%;
+  z-index: 2;
+  overflow: hidden; /* Hide overflow to ensure smooth scrolling */
+}
 
+.sponsors-wrapper {
+  display: flex;
+  gap: 5em; /* Spacing between the logo sets */
+  padding: 0 10em;
+  animation: scroll 30s linear infinite; /* Keep the current infinite scrolling */
 }
 
 .sponsor4 {
@@ -14,10 +21,9 @@ width: 100%;
 
 .sponsors-logo {
   display: flex;
+  gap: 5em; /* Increased gap for more spacing between logos */
   justify-content: space-between;
-  padding: 0em 10em;
   margin-top: 2em;
-  width: 100%;
 }
 
 .sponsor3 {
@@ -26,4 +32,14 @@ width: 100%;
 
 .sponsor5 {
   margin-top: 5px;
+}
+
+/* Scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Start at the default position */
+  }
+  100% {
+    transform: translateX(-50%); /* Scroll half the total width */
+  }
 }

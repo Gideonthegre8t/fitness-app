@@ -11,22 +11,55 @@
 
 .testimonial-card-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Start alignment for horizontal scroll */
+  overflow-x: auto; /* Enable horizontal scrolling */
   margin: 0 auto;
   text-align: center;
   margin-top: -40em;
   z-index: 1;
-  gap: 1em;
+  gap: 2em; /* Space between cards */
+  padding: 1em; /* Optional for padding */
 }
 
 .testimonial-card {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
   background: #0a262f;
-gap: 25px;
-  width: 324px;
-  height: 403px;
-  padding: 53px 27px 53px 27px;
+  gap: 25px;
   border-radius: 10px;
+  flex: 0 0 auto; /* Prevent flex items from growing/shrinking */
+  width: 324px;
+height: 403px;
+
+padding: 53px 27px 53px 27px;
+gap: 25px;
+border-radius: 10px;
+
+}
+
+/* Staggered heights */
+.high {
+margin-top: 3em;
+}
+
+.medium {
+  margin-top: -1em;
+}
+
+.low {
+ margin-top: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 80vw; /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    width: 90vw; /* Further adjust width for mobile */
+  }
 }

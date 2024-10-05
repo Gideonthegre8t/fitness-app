@@ -30,3 +30,53 @@ h2 {
   font-weight: 700;
   line-height: 48.41px;
 }
+
+.navigator {
+
+  width: 100%;
+
+  border-radius: 10px;
+  background: transparent;
+  z-index: 1;
+  margin-top: -5px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 0em;
+}
+nav a {
+  position: relative;
+  margin: 1rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: "Inter";
+font-size: 16px;
+font-weight: 400;
+line-height: 19.36px;
+text-align: left;
+
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: black;
+}
+.navbar a:hover::before {
+  width: 100%;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+.nav-btn {
+  display: none;
+}

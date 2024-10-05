@@ -1,9 +1,29 @@
+"use client";
 import "../services/services.css";
 import Image from "next/image";
-
 import Container from "@mui/material/Container";
+import { motion } from "framer-motion";
 
 function Services() {
+  // Define the animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const bounce = {
+    initial: { y: 0 },
+    animate: {
+      y: [0, -10, 0], // Up, down, back to original
+      transition: {
+        duration: 1,
+        ease: "easeInOut", // Add ease-in-out effect
+        repeat: Infinity,
+        repeatType: "reverse", // Reverse the bounce
+      },
+    },
+  };
+
   return (
     <Container>
       <section id="services" className="services-container">
@@ -16,14 +36,26 @@ function Services() {
         />
 
         <div className="training">
-          <Image
+          <motion.div
             className="training-img"
-            src="/images/personal.png"
-            alt="training-img"
-            width={405}
-            height={427}
-          />
-          <div className="training-description">
+            variants={bounce}
+            initial="initial"
+            animate="animate"
+          >
+            <Image
+              src="/images/personal.png"
+              alt="training-img"
+              width={405}
+              height={427}
+            />
+          </motion.div>
+          <motion.div
+            className="training-description"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
             <h3>Personal training</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -38,11 +70,17 @@ function Services() {
               width={18}
               height={18}
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="training">
-          <div className="training-description">
+          <motion.div
+            className="training-description"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
             <h3>Group Training</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -57,25 +95,43 @@ function Services() {
               width={18}
               height={18}
             />
-          </div>
-          <Image
+          </motion.div>
+          <motion.div
             className="training-img"
-            src="/images/group.png"
-            alt="training-img"
-            width={405}
-            height={427}
-          />
+            variants={bounce}
+            initial="initial"
+            animate="animate"
+          >
+            <Image
+              src="/images/group.png"
+              alt="training-img"
+              width={405}
+              height={427}
+            />
+          </motion.div>
         </div>
 
         <div className="training">
-          <Image
+          <motion.div
             className="training-img"
-            src="/images/nutrition.png"
-            alt="training-img"
-            width={405}
-            height={427}
-          />
-          <div className="training-description">
+            variants={bounce}
+            initial="initial"
+            animate="animate"
+          >
+            <Image
+              src="/images/nutrition.png"
+              alt="training-img"
+              width={405}
+              height={427}
+            />
+          </motion.div>
+          <motion.div
+            className="training-description"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
             <h3>Nutrition Counselling</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -90,11 +146,17 @@ function Services() {
               width={18}
               height={18}
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="training">
-          <div className="training-description">
+          <motion.div
+            className="training-description"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
             <h3>Wellness coaching</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
@@ -109,16 +171,21 @@ function Services() {
               width={18}
               height={18}
             />
-          </div>
-          <Image
+          </motion.div>
+          <motion.div
             className="training-img"
-            src="/images/wellness.png"
-            alt="training-img"
-            width={405}
-            height={427}
-          />
+            variants={bounce}
+            initial="initial"
+            animate="animate"
+          >
+            <Image
+              src="/images/wellness.png"
+              alt="training-img"
+              width={405}
+              height={427}
+            />
+          </motion.div>
         </div>
-
 
         <h2 className="services-header">Services Overview</h2>
       </section>
