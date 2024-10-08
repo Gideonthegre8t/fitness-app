@@ -51,15 +51,4 @@ margin-top: 3em;
  margin-top: 1em;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .testimonial-card {
-    width: 80vw; /* Adjust width for smaller screens */
-  }
-}
 
-@media (max-width: 480px) {
-  .testimonial-card {
-    width: 90vw; /* Further adjust width for mobile */
-  }
-}

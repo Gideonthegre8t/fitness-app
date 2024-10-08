@@ -13,7 +13,7 @@
 }
 
 .videos-image{
-    width: 100%;
+max-width: 100%;
 }
 .videos-wallpaper-text{
     position: absolute;
@@ -26,4 +26,10 @@
     margin-top: -3em;
     margin-left: 90%;
     gap: 10px;
+}
+
+@media only screen and (max-width: 1300px) {
+    .videos-image{
+        width: 50%;
+        }
 }

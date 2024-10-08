@@ -55,6 +55,8 @@ h1 {
   z-index: 1;
 }
 
+
+
 .header-wallpaper {
   position: absolute;
   width: 90%;
@@ -85,4 +87,43 @@ h1 {
   display: inline-block;
 }
 
+@media only screen and (max-width: 1000px) {
+  .header-top {
+    gap: 5em;
+  }
+  
+}
 
+@media only screen and (max-width: 800px) {
+  .header-top {
+    gap: 3em;
+  }
+
+  .header-image1{
+    max-width: 50%;
+  }
+  .header-image2{
+  display: none;
+  }
+
+  .header-image1 {
+    position: absolute;
+    margin-left: -23em;
+    margin-top: -6em;
+    z-index: 1;
+  }
+
+  .header-text {
+    margin-top: 8em;
+    margin-left: 1em;
+  }
+  .header-content {
+    display: flex;
+    margin-top:8em;
+  }
+
+  .header-wallpaper-text {
+    margin-top: 4em;
+  }
+  
+}

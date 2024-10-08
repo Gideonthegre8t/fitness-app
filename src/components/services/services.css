@@ -1,4 +1,5 @@
 .services-container{
+    position: relative;
     margin-top: 10em;
     display: flex;
     flex-direction: column;
@@ -41,5 +42,32 @@ font-weight: 400;
     position: absolute;
     margin-left:38%;
     margin-top: 9em;
+    
 }
 
+@media only screen and (max-width: 1300px) {
+    .service-wallpaper-text{
+        margin-left:20%;
+    }
+}
+
+@media only screen and (max-width: 956px) {
+    .training{
+    gap: 2em;
+    }
+    .service-wallpaper-text{
+        margin-left:-5%;
+    } 
+
+    .training-img img {
+        max-width: 300px;
+    margin-top: 3em;
+        height: auto;
+        display: block;
+      }
+      
+      .service-wallpaper-text{
+        height: 90%;
+        margin-top: -1em;
+    }
+}
