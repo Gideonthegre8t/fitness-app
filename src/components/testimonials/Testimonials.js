@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import "../testimonials/testimonials.css";
+import { useRef, useState, useEffect } from "react";
 
 function Testimonials() {
   const testimonials = [
@@ -45,6 +47,30 @@ function Testimonials() {
     },
   ];
 
+  const wrapperRef = useRef(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+
+    // Function to check if we are at the start or end of the scroll
+    const handleScroll = () => {
+      setShowLeftArrow(wrapper.scrollLeft > 0);
+      setShowRightArrow(
+        wrapper.scrollLeft < wrapper.scrollWidth - wrapper.clientWidth
+      );
+    };
+
+    // Add scroll event listener
+    wrapper.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener
+    return () => {
+      wrapper.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section className="testimonials-container">
       <Image
@@ -54,10 +80,41 @@ function Testimonials() {
         width={1792}
         height={990}
       />
-      <div className="testimonial-card-wrapper">
+
+      {/* Left Arrow */}
+      {showLeftArrow && (
+        <div
+          className="left-arrow"
+          onClick={() => (wrapperRef.current.scrollLeft -= 200)}
+        >
+          <Image
+            src="/images/right-arrow.png" // Use the same right arrow image
+            alt="left-arrow"
+            width={30}
+            height={30}
+          />
+        </div>
+      )}
+
+      {/* Right Arrow */}
+      {showRightArrow && (
+        <div
+          className="right-arrow"
+          onClick={() => (wrapperRef.current.scrollLeft += 200)}
+        >
+          <Image
+            src="/images/right-arrow.png"
+            alt="right-arrow"
+            width={30}
+            height={30}
+          />
+        </div>
+      )}
+
+      <div className="testimonial-card-wrapper" ref={wrapperRef}>
         {testimonials.map((testimonial, index) => {
-          // Determine card height based on index
-          const cardHeightClass = index % 3 === 0 ? 'high' : index % 3 === 1 ? 'medium' : 'low';
+          const cardHeightClass =
+            index % 3 === 0 ? "high" : index % 3 === 1 ? "medium" : "low";
           return (
             <div className={`testimonial-card ${cardHeightClass}`} key={index}>
               <Image

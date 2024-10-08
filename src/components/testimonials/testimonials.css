@@ -31,11 +31,14 @@
   flex: 0 0 auto; /* Prevent flex items from growing/shrinking */
   width: 324px;
 height: 403px;
-
+cursor: grab; /* Shows a draggable cursor when hovering over the cards */
 padding: 53px 27px 53px 27px;
 gap: 25px;
 border-radius: 10px;
 
+}
+.testimonial-card:active {
+  cursor: grabbing; /* Shows a closed hand cursor when dragging */
 }
 
 /* Staggered heights */
@@ -49,6 +52,25 @@ margin-top: 3em;
 
 .low {
  margin-top: 1em;
+}
+
+
+ .right-arrow {
+  position: absolute;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+  margin-top: -25em;
+  right: 10px;
+}
+
+.left-arrow {
+  position: absolute;
+  left: 10px; /* Align it to the left */
+  transform: translateY(-50%) rotate(180deg); /* Flip the right arrow to face left */
+  cursor: pointer;
+  z-index: 2;
+  margin-top: -25em;
 }
 
 
