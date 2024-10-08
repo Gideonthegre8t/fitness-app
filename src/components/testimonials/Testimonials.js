@@ -50,6 +50,9 @@ function Testimonials() {
   const wrapperRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -70,6 +73,29 @@ function Testimonials() {
       wrapper.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Mouse event handlers for dragging
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - wrapperRef.current.offsetLeft);
+    setScrollLeft(wrapperRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - wrapperRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust the scroll speed (2 for faster drag)
+    wrapperRef.current.scrollLeft = scrollLeft - walk;
+  };
 
   return (
     <section className="testimonials-container">
@@ -111,7 +137,14 @@ function Testimonials() {
         </div>
       )}
 
-      <div className="testimonial-card-wrapper" ref={wrapperRef}>
+      <div
+        className="testimonial-card-wrapper"
+        ref={wrapperRef}
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+      >
         {testimonials.map((testimonial, index) => {
           const cardHeightClass =
             index % 3 === 0 ? "high" : index % 3 === 1 ? "medium" : "low";
